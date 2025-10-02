@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class CellPhoneApplication {
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
+        Scanner myScanner = new Scanner(System.in);//prompts user to enter during run
 
+        //Instances(objects)-uses constructor
         CellPhone cellPhone1 = new CellPhone();
         System.out.print("What is the serial number for phone 1?: ");
         cellPhone1.setSerialNumber(myScanner.nextInt());
@@ -24,7 +25,7 @@ public class CellPhoneApplication {
         cellPhone1.setOwner(myScanner.nextLine());
         System.out.println();
 
-
+        //Instances(Objects)-uses constructor
         CellPhone cellPhone2 = new CellPhone();
         System.out.print("What is the serial number for phone 2: ");
         cellPhone2.setSerialNumber(myScanner.nextInt());
@@ -42,9 +43,11 @@ public class CellPhoneApplication {
         System.out.print("Who is the owner of the phone?: ");
         cellPhone2.setOwner(myScanner.nextLine());
 
+        //Instances(Objects)-uses Overloading constructor
         CellPhone cellPhone3 = new CellPhone(1231333, "Google", "AT&T", "456-123-3456", "Freddy Kruger");
         System.out.println();
 
+        //create display() method
         System.out.println("=== Phone 1 info ===");
         cellPhone1.display();
         System.out.println();
@@ -57,12 +60,11 @@ public class CellPhoneApplication {
         cellPhone3.display();
         System.out.println();
 
+        //the use of two dial methods---brings in your Instance Object
         System.out.println();
         cellPhone1.dial(cellPhone2);
         cellPhone2.dial(cellPhone1);
         cellPhone3.dial("123-545-6767");
-
-
 
         myScanner.close();
     }
