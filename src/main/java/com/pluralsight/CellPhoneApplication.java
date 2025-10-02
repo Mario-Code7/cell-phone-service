@@ -6,36 +6,57 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
 
-        CellPhone cellPhone = new CellPhone();
-
-        System.out.print("What is the serial number: ");
-        int serialNumber = myScanner.nextInt();
+        CellPhone cellPhone1 = new CellPhone();
+        System.out.print("What is the serial number for phone 1?: ");
+        cellPhone1.setSerialNumber(myScanner.nextInt());
         myScanner.nextLine();
 
         System.out.print("What model is the phone?: ");
-        String model = myScanner.nextLine();
+        cellPhone1.setModel(myScanner.nextLine());
 
         System.out.print("Who is the carrier?: ");
-        String carrier = myScanner.nextLine();
+        cellPhone1.setCarrier(myScanner.nextLine());
 
         System.out.print("What is the phone number?: ");
-        String phoneNumber = myScanner.nextLine();
+        cellPhone1.setPhoneNumber(myScanner.nextLine());
 
         System.out.print("Who is the owner of the phone?: ");
-        String owner = myScanner.nextLine();
+        cellPhone1.setOwner(myScanner.nextLine());
+        System.out.println();
 
-        cellPhone.setSerialNumber(serialNumber);
-        cellPhone.setModel(model);
-        cellPhone.setCarrier(carrier);
-        cellPhone.setPhoneNumber(phoneNumber);
-        cellPhone.setOwner(owner);
 
-        System.out.println("What is the serial number?: " + cellPhone.getSerialNumber());
-        System.out.println("What model is the phone?: " + cellPhone.getModel());
-        System.out.println("Who is the carrier?: " + cellPhone.getCarrier());
-        System.out.println("What is the phone number?: " + cellPhone.getPhoneNumber());
-        System.out.println("Who is the owner of the phone?: " + cellPhone.getOwner());
+        CellPhone cellPhone2 = new CellPhone();
+        System.out.print("What is the serial number for phone 2: ");
+        cellPhone2.setSerialNumber(myScanner.nextInt());
+        myScanner.nextLine();
 
+        System.out.print("What model is the phone?: ");
+        cellPhone2.setModel(myScanner.nextLine());
+
+        System.out.print("Who is the carrier?: ");
+        cellPhone2.setCarrier(myScanner.nextLine());
+
+        System.out.print("What is the phone number?: ");
+        cellPhone2.setPhoneNumber(myScanner.nextLine());
+
+        System.out.print("Who is the owner of the phone?: ");
+        cellPhone2.setOwner(myScanner.nextLine());
+
+        System.out.println("What is the serial number?: " + cellPhone1.getSerialNumber());
+        System.out.println("What model is the phone?: " + cellPhone1.getModel());
+        System.out.println("Who is the carrier?: " + cellPhone1.getCarrier());
+        System.out.println("What is the phone number?: " + cellPhone1.getPhoneNumber());
+        System.out.println("Who is the owner of the phone?: " + cellPhone1.getOwner());
+
+        System.out.println("What is the serial number?: " + cellPhone2.getSerialNumber());
+        System.out.println("What model is the phone?: " + cellPhone2.getModel());
+        System.out.println("Who is the carrier?: " + cellPhone2.getCarrier());
+        System.out.println("What is the phone number?: " + cellPhone2.getPhoneNumber());
+        System.out.println("Who is the owner of the phone?: " + cellPhone2.getOwner());
+
+        System.out.println();
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
 
         myScanner.close();
     }
